@@ -1,0 +1,23 @@
+{
+  "esModuleInterop": true,
+  "compilerOptions": {
+      "target": "es2022",
+      "module": "esnext",
+      "rootDir": "./src",
+      "outDir": "./dist",
+      "strict": true,
+      "sourceMap": true,
+      "esModuleInterop": true,
+      "typeRoots": [
+          "node_modules/@types",
+          "./types"
+      ],
+      "types": [
+        "node"
+      ]
+  },
+  "exclude": [
+      "dist",
+      "node_modules"
+  ]
+}
