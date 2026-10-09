@@ -82,7 +82,7 @@ body {
     /* background-color: red; */
     margin: 0;
     padding-top: 2rem;
-    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)), url('hero-bg.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)), url('images/hero-bg.jpg');
     background-position: center;
     background-size: cover;
     /* height: 100vh; */
@@ -91,11 +91,11 @@ body {
 
 .hero.home {
     height: 80vh;
-    /* background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)), url('hero-bg.jpg'); */
+    /* background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)), url('images/hero-bg.jpg'); */
 }
 
 /* .hero.recruitment {
-    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)), url('recruitment-hero-bg.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)), url('images/recruitment-hero-bg.jpg');
 } */
 
 .hero>h1 {
