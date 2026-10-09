@@ -7,9 +7,9 @@ const screen: HTMLCanvasElement = document.getElementById('screen')! as HTMLCanv
 sock_init(screen, width, height);
 
 // const img = new Image();
-// img.src = 'dude.png';
-const dude = sock_load_sprite('dude.png');
-const bush = sock_load_sprite('bush.jpeg');
+// img.src = 'images/dude.png';
+const dude = sock_load_sprite('images/dude.png');
+const bush = sock_load_sprite('images/bush.jpeg');
 
 var speed = 4;
 var x = width;

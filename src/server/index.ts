@@ -3,20 +3,20 @@ import * as path from 'path';
 
 const app: Express = express();
 
-app.use('/', express.static(path.join(import.meta.dirname, '../site'), { extensions: ['html'] }));
+app.use('/', express.static(path.join(import.meta.dirname, '../../public'), { extensions: ['html'] }));
 
 app.get('/sock.js', (req, res) => {
-    res.sendFile(path.join(import.meta.dirname, 'sock.js'));
+    res.sendFile(path.join(import.meta.dirname, '../client/sock.js'));
 });
 app.get('/sock.js.map', (req, res) => {
-    res.sendFile(path.join(import.meta.dirname, 'sock.js.map'));
+    res.sendFile(path.join(import.meta.dirname, '../client/sock.js.map'));
 });
 
 app.get('/emulator-demo.js', (req, res) => {
-    res.sendFile(path.join(import.meta.dirname, 'emulator-demo.js'));
+    res.sendFile(path.join(import.meta.dirname, '../client/emulator-demo.js'));
 });
 app.get('/emulator-demo.js.map', (req, res) => {
-    res.sendFile(path.join(import.meta.dirname, 'emulator-demo.js.map'));
+    res.sendFile(path.join(import.meta.dirname, '../client/emulator-demo.js.map'));
 });
 
 app.listen(3001, () => {
