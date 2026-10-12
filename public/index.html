@@ -24,42 +24,7 @@
     </div>
 
     <div id="content">
-        <div class="hero home">
-            <h1>Engineer the Next Generation of Chips.</h1>
-            <p class="school-tag">University of Calgary </p>
-        </div>
-        <div class="section">
-            <div class="two-col">
-                <div>
-                    <h2>Schulich on a Chip's Mission</h2>
-                    <p>SoC is driven by a semiconductor industry which many students have yet to be exposed to. Chip
-                        design is an ever growing market, and our desire is to showcase and bootstrap our team members into
-                        industry level experiences, all while bringing further exposure to computer chips and their
-                        vitality to countless aspects of our lives. Your phone, your car, your gaming console,
-                        and even rockets! Chips are vital to our world, and the deep intricacies and
-                        mechanisms behind their creation typically go unappreciated. We are
-                        here to give them the recognition they deserve.</p>
-                    <a class="cta" href="/team">
-                        <span>Meet The Team</span>
-                        <img class="cta-arrow" src="images/right-arrow-icon.svg" alt="Right Arrow Icon">
-                    </a>
-                </div>
-                <div>
-                    <img class="img-col" src="images/our-club.JPG" alt="">
-                </div>
-            </div>
-        </div>
-        <div class="section centered">
-            <span class="tag">Join Us</span>
-            <div>
-                <h1>Design the Digital Future</h1>
-                <p>We are currently hiring for technical, software, and business divisions. If you have skills in hardware design or an adjacent field that might be valuable to our club, or if you would like to learn with an ambitious and ever growing club, apply today!</p>
-                <a class="cta" href="/recruitment">
-                    <span>Apply Now</span>
-                    <img class="cta-arrow" src="images/right-arrow-icon.svg" alt="Right Arrow Icon">
-                </a>
-            </div>
-        </div>
+
     </div>
     <div id="footer">
         <div>
@@ -92,48 +57,6 @@
     </div>
 </body>
 <script>
-    const stats = document.getElementById('stats');
-    const statValues = resetStats();
-    const animStatsCallback = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                observer.unobserve(entry.target);
-                animateStats();
-            }
-        });
-    };
-    const observer = new IntersectionObserver(animStatsCallback, { root: null, rootMargin: '0px', threshold: 0.5 });
-    observer.observe(stats);
-
-    function resetStats() {
-        var statValues = [];
-        for (const stat of stats.children) {
-            const value = stat.children[0].innerHTML;
-            try {
-                const numVal = Number(value);
-                statValues.push(numVal);
-            } catch (error) {
-                console.error('Failed to convert stat value to number');
-            }
-            stat.children[0].innerHTML = '0';
-        }
-        return statValues;
-    }
-    function animateStats() {
-        var i = 0;
-        for (const stat of stats.children) {
-            const nUpdates = Math.min(statValues[i], 20);
-            for (var t = 0; t <= nUpdates; t++) {
-                const innerI = i;
-                const innerT = t;
-                setTimeout(() => {
-                    console.log(statValues[innerI], t);
-                    stat.children[0].innerHTML = statValues[innerI] * innerT / nUpdates;
-                }, 100 + t * 50);
-            }
-            i++;
-        }
-    }
 </script>
 
 </html>
