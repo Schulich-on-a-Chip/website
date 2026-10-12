@@ -1,0 +1,2 @@
+# Our Mission
+SoC is driven by a semiconductor industry which many students have yet to be exposed to. Chip design is an ever growing market, and our desire is to showcase and bootstrap our team members into industry level experiences, all while bringing further exposure to computer chips and their vitality to countless aspects of our lives. Your phone, your car, your gaming console, and even rockets! Chips are vital to our world, and the deep intricacies and mechanisms behind their creation typically go unappreciated. We are here to give them the recognition they deserve.
