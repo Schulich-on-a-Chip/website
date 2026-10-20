@@ -1,6 +1,8 @@
 {
   "type": "module",
   "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "build": "node scripts/build-pages.mjs && tsc",
     "start": "bun dist/server/index.js",
     "dev": "node scripts/build-pages.mjs && tsc && bun --watch dist/server/index.js"
@@ -11,6 +13,7 @@
   "devDependencies": {
     "@types/express": "^5.0.6",
     "@types/node": "^26.1.1",
+    "prettier": "^3.9.10",
     "typescript": "^7.0.2"
   }
 }

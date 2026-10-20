@@ -3,10 +3,11 @@ let navigation;
 async function fadeContent(element, from, to, duration, signal) {
   signal.throwIfAborted();
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  const animation = element.animate(
-    [{ opacity: from }, { opacity: to }],
-    { duration, easing: "ease-in-out", fill: "both" },
-  );
+  const animation = element.animate([{ opacity: from }, { opacity: to }], {
+    duration,
+    easing: "ease-in-out",
+    fill: "both",
+  });
   const cancel = () => animation.cancel();
   signal.addEventListener("abort", cancel, { once: true });
   try {
