@@ -1,0 +1,139 @@
+/* These two pages compose a complete viewport, including the footer and dock. */
+body:is([data-page="home"], [data-page="about"]) {
+  height: 100svh;
+  min-height: 0;
+  overflow: clip;
+  display: grid;
+  grid-template-rows: 110px minmax(0, 1fr) 130px;
+}
+
+body:is([data-page="home"], [data-page="about"]) main {
+  width: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body[data-page="home"] .home-hero {
+  min-height: 0;
+  padding: 0 0 20px;
+}
+
+body[data-page="about"] .page-heading {
+  min-height: 0;
+  padding: 0;
+  flex: 0 0 auto;
+}
+
+body[data-page="about"] .page-heading h1 {
+  margin-bottom: 22px;
+}
+
+body[data-page="about"] .mission {
+  padding: 0;
+}
+
+body[data-page="about"] .mission p {
+  margin: 0;
+  font-size: clamp(14px, 2.1svh, 20px);
+  line-height: 1.65;
+}
+
+body:is([data-page="home"], [data-page="about"]) .site-footer {
+  margin: 0 auto;
+  width: 100%;
+  min-height: 0;
+  padding: 12px 32px 76px;
+}
+
+@media (max-width: 540px) {
+  .site-header {
+    height: 100px;
+    width: 100%;
+    padding: 0 16px;
+  }
+  .primary-nav {
+    height: 38px;
+    grid-template-columns: minmax(0, 1fr) 62px minmax(0, 1fr);
+  }
+  .nav-side {
+    gap: 10px;
+    padding: 0 7px;
+  }
+  .nav-side a {
+    font-size: 11px;
+    padding: 10px 0;
+  }
+  .nav-emblem {
+    height: 38px;
+  }
+  .nav-emblem .brand {
+    width: 62px;
+    height: 62px;
+    margin-top: -12px;
+  }
+  .nav-emblem .brand img {
+    width: 43px;
+    height: 43px;
+  }
+  .home-button {
+    top: 39px;
+    width: 26px;
+    height: 26px;
+  }
+  .home-button svg {
+    width: 15px;
+    height: 15px;
+  }
+  body:is([data-page="home"], [data-page="about"]) {
+    grid-template-rows: 100px minmax(0, 1fr) 130px;
+  }
+  body:is([data-page="home"], [data-page="about"]) .site-footer {
+    padding: 10px 25px 76px;
+    gap: 12px;
+  }
+  body[data-page="about"] .page-heading h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  body[data-page="about"] .page-heading .eyebrow {
+    margin-bottom: 12px;
+  }
+  body[data-page="about"] .mission p {
+    font-size: clamp(13px, 1.95svh, 16px);
+    line-height: 1.55;
+  }
+}
+
+@media (max-height: 650px) {
+  body:is([data-page="home"], [data-page="about"]) {
+    grid-template-rows: 90px minmax(0, 1fr) 110px;
+  }
+  body:is([data-page="home"], [data-page="about"]) .site-header {
+    height: 90px;
+  }
+  body:is([data-page="home"], [data-page="about"]) .site-footer {
+    flex-direction: row;
+    padding-top: 5px;
+    font-size: 9px;
+  }
+  body:is([data-page="home"], [data-page="about"]) .footer-brand {
+    display: none;
+  }
+  body[data-page="about"] .page-heading h1 {
+    font-size: 30px;
+    margin-bottom: 12px;
+  }
+  body[data-page="about"] .page-heading .eyebrow {
+    margin-bottom: 8px;
+    font-size: 9px;
+  }
+  body[data-page="about"] .mission p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  body[data-page="home"] .home-hero h1 {
+    font-size: clamp(46px, 8vw, 72px);
+  }
+}

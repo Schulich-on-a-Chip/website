@@ -1,0 +1,300 @@
+/* Responsive layouts and reduced motion. */
+@media (min-width: 1500px) {
+  :root {
+    --wafer-y: 56svh;
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --wafer-size: 115vw;
+    --wafer-y: 59svh;
+  }
+  .site-header {
+    height: 74px;
+    padding: 0 22px;
+  }
+  .desktop-nav {
+    gap: 18px;
+  }
+  .desktop-nav a {
+    font-size: 12px;
+  }
+  .header-support {
+    display: none;
+  }
+  main {
+    padding: 0 25px;
+  }
+  .members {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px 22px;
+  }
+  .executives {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+  }
+  .feature {
+    gap: 30px;
+  }
+  .page-heading {
+    min-height: 260px;
+    padding-top: 75px;
+  }
+  .feature h2 {
+    font-size: 22px;
+  }
+  .sponsors {
+    gap: 25px;
+  }
+  .home-hero {
+    padding-top: 22vh;
+  }
+  .home-hero h1 {
+    max-width: 600px;
+  }
+  .site-footer {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  body[data-page="support"] {
+    --wafer-size: 115vw;
+    --wafer-y: 35px;
+  }
+}
+
+@media (max-width: 540px) {
+  :root {
+    --wafer-size: 154vw;
+    --wafer-y: 62svh;
+  }
+  .site-header {
+    height: 70px;
+  }
+  .brand img {
+    width: 36px;
+    height: 36px;
+  }
+  .desktop-nav {
+    display: none;
+  }
+  .header-support {
+    display: block;
+    margin-left: auto;
+    font-size: 11px;
+    padding: 8px 11px;
+  }
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    border: 0;
+    background: transparent;
+    width: 30px;
+    height: 36px;
+    padding: 5px;
+    cursor: pointer;
+  }
+  .menu-toggle span {
+    height: 1px;
+    background: currentColor;
+    width: 20px;
+    transition: transform 0.2s;
+  }
+  .menu-toggle[aria-expanded="true"] span:first-child {
+    transform: translateY(3px) rotate(45deg);
+  }
+  .menu-toggle[aria-expanded="true"] span:last-child {
+    transform: translateY(-3px) rotate(-45deg);
+  }
+  .mobile-nav.open {
+    display: flex;
+    position: absolute;
+    top: 63px;
+    left: 16px;
+    right: 16px;
+    flex-direction: column;
+    padding: 14px 22px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    box-shadow: 0 12px 20px #29282008;
+  }
+  .mobile-nav a {
+    font-size: 14px;
+    padding: 12px 0;
+  }
+  .mobile-nav a[aria-current] {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+  .home-hero {
+    padding-top: 23vh;
+    min-height: calc(100svh - 170px);
+  }
+  .home-hero .eyebrow {
+    font-size: 10px;
+    margin-bottom: 24px;
+  }
+  .home-hero h1 {
+    font-size: clamp(58px, 16vw, 85px);
+    max-width: 380px;
+  }
+  .home-links {
+    margin-top: 15px;
+  }
+  .page-heading {
+    padding: 77px 0 55px;
+    min-height: 250px;
+  }
+  .page-heading h1 {
+    font-size: 43px;
+  }
+  .page-heading .eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.1em;
+  }
+  body:not([data-page="home"], [data-page="projects"], [data-page="events"]) {
+    --wafer-y: calc(-1 * var(--wafer-size) + 220px);
+    --wafer-x: 0px;
+  }
+  .mission {
+    padding: 0 0 60px;
+  }
+  .mission p {
+    font-size: 18px;
+  }
+  .members {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .executives {
+    grid-template-columns: 1fr;
+  }
+  .executives .member {
+    flex-direction: row;
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
+  }
+  .executives .portrait {
+    height: 64px;
+    width: 64px;
+    margin: 0;
+  }
+  .member h3 {
+    font-size: 14px;
+  }
+  .member p {
+    max-width: none;
+  }
+  .member-link {
+    top: 20px;
+  }
+  .team-section > h2 {
+    margin-bottom: 0;
+  }
+  .feature {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 28px 0;
+    margin-top: 0;
+    margin-bottom: 55px;
+  }
+  .feature h2 {
+    font-size: 25px;
+  }
+  .feature p {
+    font-size: 15px;
+  }
+  .chip-art {
+    aspect-ratio: 1.4;
+  }
+  .chip-pins {
+    width: 45%;
+  }
+  .event-photo {
+    height: 260px;
+  }
+  .sponsors {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 65px;
+  }
+  .sponsor-image {
+    height: 130px;
+  }
+  .sponsor img {
+    max-height: 120px;
+    max-width: 270px;
+  }
+  .sponsor h2 {
+    margin-top: 18px;
+  }
+  .support-contact {
+    padding: 38px 0 60px;
+  }
+  .support-contact h2 {
+    font-size: 28px;
+  }
+  body[data-page="support"] {
+    --wafer-size: 175vw;
+    --wafer-y: 20px;
+  }
+  .site-footer {
+    font-size: 10px;
+    flex-direction: column;
+    gap: 18px;
+    padding-bottom: 110px;
+  }
+  .contact-dock {
+    bottom: 18px;
+  }
+  .reading p {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  body,
+  .wafer,
+  .sky-day,
+  .sky-night,
+  .sky-night::after,
+  .nav-side a,
+  .contact-dock > a {
+    transition: none !important;
+  }
+  * {
+    animation: none !important;
+  }
+}
+
+/* Footer contact layout refinements. */
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-links {
+  align-items: flex-start;
+}
+
+body[data-page="home"] .site-footer {
+  margin-top: -50px;
+  position: relative;
+}
+
+@media (max-width: 540px) {
+  body[data-page="home"] .site-footer {
+    margin-top: -65px;
+  }
+  .footer-links {
+    gap: 28px;
+  }
+}
