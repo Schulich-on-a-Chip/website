@@ -15,7 +15,8 @@ All displayed text is sourced from the JSON block below. Existing wording is pre
     "support": "Support Us"
   },
   "home": {
-    "title": "Schulich on a Chip"
+    "title": "Schulich on a Chip",
+    "subtitle": "Engineering the next generation of chips"
   },
   "about": {
     "title": "Our Mission",

@@ -131,21 +131,18 @@ const heading = (title, sub = "") => /* HTML */ `
 const pages = {
   home: /* HTML */ `
     <section class="home-hero">
-      <p class="eyebrow">${escapeHtml(copy.school)}</p>
       <h1>${escapeHtml(copy.home.title)}</h1>
-      <div class="home-links">
-        ${link("/about", copy.navigation.about, "button")}${link("/projects", copy.navigation.projects, "text-button")}
-      </div>
+      <h2>${escapeHtml(copy.home.subtitle)}</h2>
     </section>
   `,
   about: /* HTML */ `
-    ${heading(copy.about.title, copy.school)}
+    ${heading(copy.about.title)}
     <section class="mission reading">
       <p>${escapeHtml(copy.about.body)}</p>
     </section>
   `,
   team: /* HTML */ `
-    ${heading(copy.team.title, copy.school)}
+    ${heading(copy.team.title)}
     <section class="team-section">
       <h2>${escapeHtml(copy.team.executives)}</h2>
       <div class="members executives">
@@ -239,6 +236,12 @@ for (const [key, content] of Object.entries(pages)) {
         <meta name="theme-color" content="${skyColor}" />
         <title>${escapeHtml(title)} | ${escapeHtml(copy.brand)}</title>
         <link rel="icon" href="/images/logo.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Exo:wght@400;500&amp;display=swap"
+        />
         <link rel="stylesheet" href="/styles.css" />
         <script src="/site.js" defer></script>
       </head>
