@@ -1,20 +1,27 @@
 /* Foundations: theme variables, resets, and shared element styles. */
 :root {
   font-family: "Exo", "Helvetica Neue", Arial, sans-serif;
-  color: #292820;
-  background: #faf9f6;
+  color: #f2efff;
+  background: #0a002c;
   font-synthesis: none;
-  --muted: #55544c;
-  --line: #deddd4;
-  --paper: #faf9f6;
+  --muted: #bcb3d4;
+  --line: #d3c4ff30;
+  --paper: #160d36;
   --wafer-size: min(88vw, 1080px);
   --wafer-y: 56svh;
   --wafer-x: 0px;
   --wafer-rotation: 0deg;
-  --ink: #292820;
-  --copy: #49483f;
-  --eyebrow: #66543d;
-  --footer: #494034;
+  --ink: #f2efff;
+  --copy: #d4cde5;
+  --eyebrow: #c4b5e4;
+  --footer: #bcb3d4;
+  --control: #ffffff0d;
+  --control-hover: #ffffff1a;
+  --control-border: #ffffff26;
+  --control-shadow:
+    inset 0 1px 0 #ffffff40, inset 1px 0 0 #ffffff14, inset 0 -1px 0 #ffffff1f,
+    inset -1px 0 0 #ffffff0a, 0 2px 4px #00000014, 0 8px 24px #00000026;
+  --glass-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 * {
@@ -23,6 +30,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 120px;
 }
 
 body {
@@ -49,7 +57,7 @@ button {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid #776526;
+  outline: 2px solid #bcb0ef;
   outline-offset: 6px;
 }
 
@@ -64,5 +72,5 @@ svg {
 }
 
 ::selection {
-  background: #eaddad;
+  background: #60428b;
 }

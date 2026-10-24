@@ -1,5 +1,9 @@
 /* The four page links flank the central logo and overlapping Home control. */
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 7;
+  align-self: start;
   width: 100%;
   height: 110px;
   max-width: 700px;
@@ -7,60 +11,66 @@
   justify-content: center;
 }
 
-/* Shared glass surface keeps navigation legible across all sky palettes. */
+/* Clear material, a narrow curved rim, and a shadow beneath the glass. */
 .primary-nav,
-.contact-dock {
-  background: #faf9f6e8;
-  border: 1px solid #ffffffb3;
-  box-shadow:
-    inset 0 1px 0 #ffffffcc,
-    inset 0 -1px 0 #ffffff26,
-    0 8px 28px #29282012,
-    0 2px 6px #29282008;
+.contact-dock,
+.button,
+.dock-support,
+.home-button,
+.nav-emblem .brand {
+  background: #252035;
+  border: 1px solid var(--control-border);
+  box-shadow: var(--control-shadow);
 }
 
 @supports (
   (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
 ) {
   .primary-nav,
-  .contact-dock {
-    background: linear-gradient(135deg, #ffffffe0, #faf9f6c9);
-    -webkit-backdrop-filter: blur(22px) saturate(150%);
-    backdrop-filter: blur(22px) saturate(150%);
+  .contact-dock,
+  .button,
+  .dock-support,
+  .home-button,
+  .nav-emblem .brand {
+    background: var(--control);
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
+    backdrop-filter: blur(10px) saturate(120%);
   }
 }
 
 .primary-nav {
-  color: #292820;
+  position: relative;
+  color: var(--ink);
+  text-shadow: 0 1px 3px #00000066;
   width: 100%;
-  height: 44px;
+  height: 48px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 86px minmax(0, 1fr);
   align-items: center;
-  border-radius: 12px;
+  border-radius: 999px;
 }
 
 .nav-side {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  gap: 12px;
-  padding: 0 12px;
+  gap: 8px;
+  padding: 0 8px;
 }
 
 .nav-side a {
   position: relative;
   font-size: 13px;
-  color: #45443c;
+  color: var(--copy);
   white-space: nowrap;
-  padding: 12px 0;
+  padding: 8px 14px;
   font-weight: 500;
   transition: color 180ms ease;
 }
 
 .nav-side a:hover,
 .nav-side a[aria-current] {
-  color: #292820;
+  color: var(--ink);
 }
 
 .nav-side a[aria-current]::after {
@@ -70,7 +80,7 @@
   height: 3px;
   border-radius: 50%;
   background: currentColor;
-  bottom: 4px;
+  bottom: 2px;
   left: 50%;
 }
 
@@ -87,12 +97,12 @@
   margin-top: -16px;
   display: grid;
   place-items: center;
-  border: 1px solid #ffffffcc;
+  border: 1px solid var(--control-border);
   border-radius: 50%;
-  background: linear-gradient(145deg, #fffffff2, #eeeae2d9);
-  box-shadow:
-    inset 0 1px 0 #ffffff,
-    0 4px 14px #29282014;
+  background: #21183b;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  box-shadow: var(--control-shadow);
 }
 
 .nav-emblem .brand img {
@@ -107,12 +117,10 @@
   transform: translateX(-50%);
   width: 29px;
   height: 29px;
-  border: 1px solid #ffffffcc;
+  border: 1px solid var(--control-border);
   border-radius: 50%;
-  background: linear-gradient(145deg, #fffffff2, #eeeae2d9);
-  box-shadow:
-    inset 0 1px 0 #ffffff,
-    0 4px 14px #29282014;
+  background: var(--control);
+  box-shadow: var(--control-shadow);
   display: grid;
   place-items: center;
 }
@@ -124,5 +132,5 @@
 
 .home-button:hover,
 .home-button[aria-current] {
-  background: linear-gradient(145deg, #ffffff, #e8e3d6e6);
+  background-color: var(--control-hover);
 }

@@ -1,5 +1,5 @@
 /* Footer and contact dock. */
-/* Reuse the sky layers so the fade follows its colors and transitions. */
+/* Reuse the gradient layers so the fade follows its colors and transitions. */
 .bottom-fade {
   position: fixed;
   inset: auto 0 0;
@@ -25,17 +25,12 @@
   );
 }
 
-/* Sample the same viewport coordinates as the full-height sky. */
+/* Sample the same viewport coordinates as the full-height background. */
 .bottom-fade,
-.bottom-fade .sky-day,
-.bottom-fade .sky-night {
+.bottom-fade .wafer-gradient {
   background-size: 100% 100dvh;
   background-position: center bottom;
   background-repeat: no-repeat;
-}
-
-.bottom-fade .sky-night::after {
-  display: none;
 }
 
 .site-footer {
@@ -70,7 +65,7 @@
   align-items: center;
   gap: 4px;
   padding: 6px;
-  border-radius: 14px;
+  border-radius: 999px;
 }
 
 .contact-dock > a:not(.dock-support) {
@@ -78,16 +73,16 @@
   width: 32px;
   display: grid;
   place-items: center;
-  color: #45443c;
-  border-radius: 8px;
+  color: var(--copy);
+  border-radius: 999px;
   transition:
     background-color 180ms ease,
     color 180ms ease;
 }
 
 .contact-dock > a:hover {
-  background: #ffffff80;
-  color: #292820;
+  background: #ffffff0f;
+  color: var(--ink);
 }
 
 .contact-dock svg {
@@ -98,19 +93,18 @@
 .dock-divider {
   width: 1px;
   height: 20px;
-  background: #29282026;
+  background: var(--control-border);
   margin: 0 5px;
 }
 
 .dock-support {
   font-size: 11px;
   padding: 10px 14px;
-  background: #2e2e25;
-  color: white;
-  border-radius: 8px;
-  box-shadow:
-    inset 0 1px 0 #ffffff20,
-    0 2px 5px #29282012;
+  background: var(--control);
+  border: 1px solid var(--control-border);
+  color: var(--ink);
+  border-radius: 999px;
+  box-shadow: var(--control-shadow);
   transition: background-color 180ms ease;
   white-space: nowrap;
 }
@@ -122,6 +116,6 @@
 
 .contact-dock > .dock-support:hover,
 .home-hero .dock-support:hover {
-  background: #4c4b3f;
+  background-color: var(--control-hover);
   color: #fff;
 }

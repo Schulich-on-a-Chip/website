@@ -262,9 +262,7 @@
   }
   body,
   .wafer,
-  .sky-day,
-  .sky-night,
-  .sky-night::after,
+  .wafer-gradient,
   .nav-side a,
   .contact-dock > a {
     transition: none !important;

@@ -1,4 +1,6 @@
-/* Small, deliberate responses to pointer, keyboard, and touch input. */
+/* Restrained changes in tint and pressure keep the material visually stable. */
+.primary-nav,
+.contact-dock,
 .button,
 .text-button,
 .dock-support,
@@ -8,40 +10,23 @@
   transition:
     background-color 180ms ease,
     color 180ms ease,
-    box-shadow 220ms ease,
-    scale 160ms ease;
+    scale 180ms var(--glass-ease);
 }
 
-.button svg,
-.text-button svg,
-.contact-dock svg,
-.nav-emblem .brand img,
-.member-link svg {
-  transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+.nav-side a {
+  border-radius: 999px;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
 }
 
-.nav-side a::before {
-  content: "";
-  position: absolute;
-  inset: 5px -10px;
-  border-radius: 7px;
-  background: #ffffff40;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 180ms ease;
-}
-
-.nav-side a:focus-visible::before {
-  opacity: 1;
-}
-
-.button:focus-visible svg,
-.text-button:focus-visible svg {
-  transform: translateX(3px);
+.nav-side a:focus-visible,
+.contact-dock > a:focus-visible {
+  background-color: #ffffff12;
 }
 
 .member .portrait {
-  transition: filter 240ms ease;
+  transition: filter 180ms ease;
 }
 
 .member:focus-within .portrait {
@@ -49,18 +34,9 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .nav-side a:hover::before {
-    opacity: 1;
-  }
-  .button:hover {
-    box-shadow: 0 5px 14px #2928201a;
-  }
-  .button:hover svg,
-  .text-button:hover svg {
-    transform: translateX(3px);
-  }
-  .nav-emblem .brand:hover img {
-    transform: scale(1.04) rotate(-3deg);
+  .nav-side a:hover,
+  .contact-dock > a:not(.dock-support):hover {
+    background-color: #ffffff0f;
   }
   .member:hover .portrait {
     filter: saturate(1);
@@ -68,53 +44,41 @@
 }
 
 .button:active,
-.text-button:active,
 .dock-support:active,
 .home-button:active,
 .nav-emblem .brand:active,
 .contact-dock > a:active {
-  scale: 0.97;
+  scale: 0.985;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   @keyframes content-arrive {
     from {
       opacity: 0;
-      translate: 0 8px;
     }
     to {
       opacity: 1;
-      translate: 0 0;
     }
-  }
-  @keyframes navigation-arrive {
-    from {
-      opacity: 0;
-      translate: 0 -4px;
-    }
-    to {
-      opacity: 1;
-      translate: 0 0;
-    }
-  }
-  .primary-nav {
-    animation: navigation-arrive 420ms ease-out both;
-  }
-  .contact-dock {
-    animation: content-arrive 480ms 80ms ease-out both;
   }
   main > * {
-    animation: content-arrive 480ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    animation: content-arrive 320ms ease-out backwards;
   }
   main > :nth-child(2) {
-    animation-delay: 60ms;
+    animation-delay: 40ms;
   }
   main > :nth-child(n + 3) {
-    animation-delay: 100ms;
+    animation-delay: 80ms;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .button,
+  .dock-support,
+  .home-button,
+  .nav-emblem .brand,
+  .contact-dock > a {
+    scale: 1 !important;
+  }
   *,
   *::before,
   *::after {

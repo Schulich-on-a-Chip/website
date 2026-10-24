@@ -266,18 +266,13 @@ const circuits = `<div class="circuits" aria-hidden="true">${[
 // Render each page inside the shared document layout.
 for (const [key, content] of Object.entries(pages)) {
   const title = key === "home" ? copy.navigation.home : copy[key].title;
-  const skyColor = ["projects", "events"].includes(key)
-    ? "#080f24"
-    : ["about", "team"].includes(key)
-      ? "#64b0e3"
-      : "#8b88b5";
   const html = /* HTML */ `
     <!doctype html>
     <html lang="en">
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <meta name="theme-color" content="${skyColor}" />
+        <meta name="theme-color" content="#0a002c" />
         <title>${escapeHtml(title)} | ${escapeHtml(copy.brand)}</title>
         <link rel="icon" href="/images/logo.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -287,17 +282,29 @@ for (const [key, content] of Object.entries(pages)) {
           href="https://fonts.googleapis.com/css2?family=Exo:wght@400;500&amp;display=swap"
         />
         <link rel="stylesheet" href="/styles.css" />
-        <script src="/site.js" defer></script>
+        <script type="module" src="/site.js"></script>
       </head>
       <body data-page="${key}">
-        <div class="sky" aria-hidden="true">
-          <div class="sky-day"></div>
-          <div class="sky-night"></div>
+        <div class="wafer-field" aria-hidden="true">
+          <div class="wafer-gradient" data-gradient="home"></div>
+          <div class="wafer-gradient" data-gradient="about"></div>
+          <div class="wafer-gradient" data-gradient="team"></div>
+          <div class="wafer-gradient" data-gradient="projects"></div>
+          <div class="wafer-gradient" data-gradient="events"></div>
+          <div class="wafer-gradient" data-gradient="support"></div>
+          <div class="wafer-gradient" data-gradient="recruitment"></div>
+          <div class="wafer-gradient" data-gradient="activity"></div>
         </div>
         ${circuits}
         <div class="bottom-fade" aria-hidden="true">
-          <div class="sky-day"></div>
-          <div class="sky-night"></div>
+          <div class="wafer-gradient" data-gradient="home"></div>
+          <div class="wafer-gradient" data-gradient="about"></div>
+          <div class="wafer-gradient" data-gradient="team"></div>
+          <div class="wafer-gradient" data-gradient="projects"></div>
+          <div class="wafer-gradient" data-gradient="events"></div>
+          <div class="wafer-gradient" data-gradient="support"></div>
+          <div class="wafer-gradient" data-gradient="recruitment"></div>
+          <div class="wafer-gradient" data-gradient="activity"></div>
         </div>
         <header class="site-header">${nav(key)}</header>
         <main id="content" tabindex="-1">${content}</main>

@@ -1,3 +1,7 @@
+import { refreshGlass } from "./glass.js";
+
+refreshGlass();
+
 let navigation;
 
 async function fadeContent(element, from, to, duration, signal) {
@@ -42,6 +46,7 @@ async function navigate(url, push = true) {
     );
     controller.signal.throwIfAborted();
     currentContent.replaceWith(nextContent);
+    refreshGlass();
     document.title = page.title;
     document.body.dataset.page = page.body.dataset.page;
     document.querySelector('meta[name="theme-color"]').content =

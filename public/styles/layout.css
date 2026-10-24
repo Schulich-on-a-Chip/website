@@ -52,14 +52,14 @@
 
 .header-support {
   font-size: 12px;
-  border: 1px solid #d7d5c8;
+  border: 1px solid var(--control-border);
   padding: 10px 15px;
   border-radius: 5px;
-  background: #faf9f6;
+  background: var(--control);
 }
 
 .header-support:hover {
-  background: #eeece2;
+  background-color: var(--control-hover);
 }
 
 .menu-toggle,
@@ -125,13 +125,15 @@ h1 {
 }
 
 .button {
-  background: #2e2e25;
-  color: #faf9f6;
+  background: var(--control);
+  border: 1px solid var(--control-border);
+  box-shadow: var(--control-shadow);
+  color: var(--ink);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 22px;
-  border-radius: 5px;
+  border-radius: 999px;
   padding: 13px 18px;
   font-size: 12px;
   line-height: 1.4;
@@ -143,13 +145,13 @@ h1 {
 }
 
 .button:hover {
-  background: #4c4b3f;
+  background-color: var(--control-hover);
 }
 
 .text-button {
   font-size: 12px;
   padding: 12px 0;
-  border-bottom: 1px solid #8f8665;
+  border-bottom: 1px solid var(--control-border);
 }
 
 .page-heading {

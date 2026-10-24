@@ -1,5 +1,5 @@
-/* Sky layers and atmospheric artwork. */
-.sky {
+/* Silicon wafer interference colours over a deep violet substrate. */
+.wafer-field {
   position: fixed;
   inset: 0;
   z-index: -2;
@@ -7,54 +7,84 @@
   overflow: hidden;
 }
 
-.sky,
+.wafer-field,
 .bottom-fade {
-  background: linear-gradient(
-    180deg,
-    #8b88b5 0%,
-    #c6a0b4 28%,
-    #eead98 55%,
-    #f8cc9d 78%,
-    #ffe2b3 100%
-  );
+  background: #0a002c;
 }
 
-.sky-day,
-.sky-night {
+.wafer-gradient {
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: opacity 1.8s ease;
+  transition: opacity 1s ease-in-out;
 }
 
-.sky-day {
-  background: linear-gradient(180deg, #64b0e3 0%, #a5d6f2 55%, #deeff9 100%);
+/* Each page has its own interference colours, reflection positions, and angle. */
+.wafer-gradient[data-gradient="home"] {
+  background:
+    radial-gradient(ellipse at 100% 85%, #87513a66, transparent 50%),
+    radial-gradient(ellipse at 5% 65%, #502b7b80, transparent 55%),
+    linear-gradient(145deg, #0a002c 25%, #170d3d 65%, #0a002c 100%);
 }
 
-.sky-night {
-  background: linear-gradient(180deg, #080f24 0%, #131e3a 60%, #283653 100%);
+.wafer-gradient[data-gradient="about"] {
+  background:
+    radial-gradient(ellipse at 95% 20%, #8d467173, transparent 50%),
+    radial-gradient(ellipse at 10% 90%, #4c50a880, transparent 55%),
+    linear-gradient(155deg, #0a002c 25%, #281044 65%, #0a002c 100%);
 }
 
-.sky-night::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle at 17px 31px, #fff9e5 0 1px, transparent 1.6px),
-    radial-gradient(circle at 143px 187px, #d6e8ff 0 0.8px, transparent 1.5px),
-    radial-gradient(circle at 284px 67px, #fff 0 1.2px, transparent 2px),
-    radial-gradient(circle at 337px 243px, #c1d4f3 0 0.6px, transparent 1.3px),
-    radial-gradient(circle at 83px 126px, #fff 0 0.6px, transparent 1.2px),
-    radial-gradient(circle at 219px 279px, #e3eaff 0 0.8px, transparent 1.4px);
-  background-size:
-    379px 311px,
-    461px 397px,
-    593px 433px,
-    367px 349px,
-    509px 467px,
-    631px 521px;
-  opacity: 0;
-  transition: opacity 1.4s ease;
+.wafer-gradient[data-gradient="team"] {
+  background:
+    radial-gradient(ellipse at 0% 15%, #6654ab80, transparent 50%),
+    radial-gradient(ellipse at 100% 80%, #a04b8466, transparent 55%),
+    linear-gradient(125deg, #0a002c 25%, #211344 65%, #0a002c 100%);
+}
+
+.wafer-gradient[data-gradient="projects"] {
+  background:
+    radial-gradient(ellipse at 5% 30%, #208b8973, transparent 50%),
+    radial-gradient(ellipse at 95% 85%, #554ba880, transparent 55%),
+    linear-gradient(165deg, #0a002c 25%, #0e273e 65%, #0a002c 100%);
+}
+
+.wafer-gradient[data-gradient="events"] {
+  background:
+    radial-gradient(ellipse at 100% 35%, #ad526b80, transparent 50%),
+    radial-gradient(ellipse at 0% 95%, #ab713d66, transparent 55%),
+    linear-gradient(135deg, #0a002c 25%, #321039 65%, #0a002c 100%);
+}
+
+.wafer-gradient[data-gradient="support"] {
+  background:
+    radial-gradient(ellipse at 10% 80%, #b7804873, transparent 50%),
+    radial-gradient(ellipse at 95% 10%, #72588e66, transparent 55%),
+    linear-gradient(150deg, #0a002c 25%, #2d1739 65%, #0a002c 100%);
+}
+
+.wafer-gradient[data-gradient="recruitment"] {
+  background:
+    radial-gradient(ellipse at 95% 70%, #416ca780, transparent 50%),
+    radial-gradient(ellipse at 0% 25%, #624fb380, transparent 55%),
+    linear-gradient(175deg, #0a002c 25%, #171846 65%, #0a002c 100%);
+}
+
+.wafer-gradient[data-gradient="activity"] {
+  background:
+    radial-gradient(ellipse at 0% 65%, #488b6f66, transparent 50%),
+    radial-gradient(ellipse at 100% 15%, #467e9c73, transparent 55%),
+    linear-gradient(115deg, #0a002c 25%, #112a37 65%, #0a002c 100%);
+}
+
+body[data-page="home"] .wafer-gradient[data-gradient="home"],
+body[data-page="about"] .wafer-gradient[data-gradient="about"],
+body[data-page="team"] .wafer-gradient[data-gradient="team"],
+body[data-page="projects"] .wafer-gradient[data-gradient="projects"],
+body[data-page="events"] .wafer-gradient[data-gradient="events"],
+body[data-page="support"] .wafer-gradient[data-gradient="support"],
+body[data-page="recruitment"] .wafer-gradient[data-gradient="recruitment"],
+body[data-page="activity"] .wafer-gradient[data-gradient="activity"] {
+  opacity: 1;
 }
 
 /* Fixed edge circuits leave the central reading area clear. */
@@ -64,7 +94,7 @@
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
-  color: #000000;
+  color: #aaa0db;
   opacity: 1;
 }
 
@@ -149,28 +179,6 @@ body:is([data-page="projects"], [data-page="events"]) .circuits {
   }
 }
 
-body:is([data-page="about"], [data-page="team"]) .sky-day {
-  opacity: 1;
-}
-
-body:is([data-page="projects"], [data-page="events"]) {
-  --ink: #f2f3f8;
-  --copy: #cdd7e8;
-  --muted: #b6c6dd;
-  --line: #ffffff30;
-  --eyebrow: #c9d6ec;
-  --footer: #b6c6dd;
-}
-
-body:is([data-page="projects"], [data-page="events"]) .sky-night {
-  opacity: 1;
-}
-
-body:is([data-page="projects"], [data-page="events"]) .sky-night::after {
-  opacity: 0.85;
-  transition-delay: 0.6s;
-}
-
 .wafer {
   position: fixed;
   z-index: -1;
@@ -195,7 +203,7 @@ body:not([data-page="home"]) {
   --wafer-rotation: 12deg;
 }
 
-/* Page-specific sky palettes and wafer positioning. */
+/* Page-specific wafer palettes and wafer positioning. */
 body[data-page="about"] {
   --wafer-rotation: 24deg;
 }

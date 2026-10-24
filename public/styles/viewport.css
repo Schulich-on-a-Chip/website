@@ -58,12 +58,12 @@ body:is([data-page="home"], [data-page="about"]) .site-footer {
     grid-template-columns: minmax(0, 1fr) 62px minmax(0, 1fr);
   }
   .nav-side {
-    gap: 10px;
-    padding: 0 7px;
+    gap: 2px;
+    padding: 0 2px;
   }
   .nav-side a {
     font-size: 11px;
-    padding: 10px 0;
+    padding: 6px;
   }
   .nav-emblem {
     height: 38px;
