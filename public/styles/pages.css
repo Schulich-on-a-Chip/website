@@ -197,6 +197,7 @@
   border-top: 1px solid var(--line);
   padding-top: 50px;
   text-align: center;
+  border-radius: 3%;
 }
 
 .support-contact h2,

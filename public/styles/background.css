@@ -1,4 +1,4 @@
-/* Sky layers and wafer artwork. */
+/* Sky layers and atmospheric artwork. */
 .sky {
   position: fixed;
   inset: 0;
@@ -52,6 +52,8 @@
   opacity: 0;
   transition: opacity 1.4s ease;
 }
+
+/* Circuit texture removed. */
 
 body:is([data-page="about"], [data-page="team"]) .sky-day {
   opacity: 1;
