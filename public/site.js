@@ -52,7 +52,14 @@ async function navigate(url, push = true) {
         a.setAttribute("aria-current", "page");
     });
     if (push) history.pushState({}, "", url);
-    window.scrollTo({ top: 0, behavior: "instant" });
+    const target = url.hash
+      ? document.getElementById(decodeURIComponent(url.hash.slice(1)))
+      : null;
+    if (target) {
+      target.scrollIntoView({ behavior: "instant", block: "start" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "instant" });
+    }
     nextContent.focus({ preventScroll: true });
     await fadeContent(nextContent, 0, 1, 320, controller.signal);
   } catch (error) {
@@ -76,7 +83,7 @@ document.addEventListener("click", (event) => {
   const url = new URL(a.href);
   if (
     url.origin !== location.origin ||
-    url.hash ||
+    (url.hash && url.pathname === location.pathname) ||
     ![
       "/",
       "/team",

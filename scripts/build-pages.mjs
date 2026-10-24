@@ -141,6 +141,7 @@ const pages = {
     <section class="home-hero">
       <h1>${escapeHtml(copy.home.title)}</h1>
       <h2>${escapeHtml(copy.home.subtitle)}</h2>
+      ${link("/support#become-a-sponsor", copy.support.ctaLabel, "dock-support")}
     </section>
   `,
   about: /* HTML */ `
@@ -211,7 +212,7 @@ const pages = {
         )
         .join("")}
     </section>
-    <section class="support-contact reading">
+    <section id="become-a-sponsor" class="support-contact reading">
       <p class="eyebrow">${escapeHtml(copy.support.ctaLabel)}</p>
       <h2>${escapeHtml(copy.support.ctaHeading)}</h2>
       <p>${escapeHtml(copy.support.body)}</p>
@@ -227,6 +228,41 @@ const pages = {
     </section>
   `,
 };
+// Decorative traces stay outside the content swapped during navigation.
+const circuitPaths = {
+  side: [
+    "M0 25H28L52 49V176L76 200V320L108 352V430",
+    "M0 120H16L36 140V274L60 298V455L88 483V590",
+    "M0 375H20L44 399V540L68 564V690L100 722V805",
+    "M0 610H16L36 630V760L60 784V870L90 900",
+    "M0 850H16L28 838V710L12 694V500",
+  ],
+  cap: [
+    "M0 16H130L156 42H285L310 67H390",
+    "M0 35H105L133 63H240L265 88H320",
+    "M900 18H755L730 43H625L600 68H520",
+    "M900 39H790L762 67H680L656 91H590",
+  ],
+};
+const circuits = `<div class="circuits" aria-hidden="true">${[
+  ["left", "side"],
+  ["right", "side"],
+  ["top", "cap"],
+  ["bottom", "cap"],
+]
+  .map(
+    ([edge, shape]) =>
+      `<svg class="circuit-panel circuit-${edge}" viewBox="${shape === "side" ? "0 0 120 900" : "0 0 900 100"}" preserveAspectRatio="none" focusable="false">${circuitPaths[
+        shape
+      ]
+        .map(
+          (d, i) =>
+            `<path class="circuit-trace" d="${d}"/><path class="circuit-pulse" d="${d}" pathLength="1000" style="--pulse-delay: -${i * 3 + (edge === "right" || edge === "bottom" ? 5 : 0)}s; --pulse-duration: ${14 + i * 2}s"/>`,
+        )
+        .join("")}</svg>`,
+  )
+  .join("")}</div>`;
+
 // Render each page inside the shared document layout.
 for (const [key, content] of Object.entries(pages)) {
   const title = key === "home" ? copy.navigation.home : copy[key].title;
@@ -255,6 +291,11 @@ for (const [key, content] of Object.entries(pages)) {
       </head>
       <body data-page="${key}">
         <div class="sky" aria-hidden="true">
+          <div class="sky-day"></div>
+          <div class="sky-night"></div>
+        </div>
+        ${circuits}
+        <div class="bottom-fade" aria-hidden="true">
           <div class="sky-day"></div>
           <div class="sky-night"></div>
         </div>

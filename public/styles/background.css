@@ -5,6 +5,10 @@
   z-index: -2;
   pointer-events: none;
   overflow: hidden;
+}
+
+.sky,
+.bottom-fade {
   background: linear-gradient(
     180deg,
     #8b88b5 0%,
@@ -53,7 +57,97 @@
   transition: opacity 1.4s ease;
 }
 
-/* Circuit texture removed. */
+/* Fixed edge circuits leave the central reading area clear. */
+.circuits {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  color: #000000;
+  opacity: 1;
+}
+
+.circuit-panel {
+  position: absolute;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1;
+}
+
+.circuit-panel path {
+  vector-effect: non-scaling-stroke;
+}
+
+.circuit-left,
+.circuit-right {
+  top: 0;
+  width: clamp(32px, 8vw, 120px);
+  height: 100%;
+}
+
+.circuit-left {
+  left: 0;
+}
+
+.circuit-right {
+  right: 0;
+  transform: scale(-1, -1);
+}
+
+.circuit-top,
+.circuit-bottom {
+  left: 0;
+  width: 100%;
+  height: clamp(32px, 7vh, 80px);
+}
+
+.circuit-top {
+  top: 0;
+}
+
+.circuit-bottom {
+  bottom: 0;
+  transform: scale(-1, -1);
+}
+
+.circuit-trace {
+  opacity: 0.18;
+}
+
+.circuit-pulse {
+  stroke: #fff3d6;
+  stroke-width: 1.5;
+  stroke-dasharray: 38 962;
+  opacity: 0;
+}
+
+body:is([data-page="projects"], [data-page="events"]) .circuits {
+  color: #9dbfdf;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .circuit-pulse {
+    animation: circuit-flow var(--pulse-duration) var(--pulse-delay) linear
+      infinite;
+  }
+}
+
+@keyframes circuit-flow {
+  0% {
+    stroke-dashoffset: 40;
+    opacity: 0;
+  }
+  12%,
+  75% {
+    opacity: 0.65;
+  }
+  90%,
+  100% {
+    stroke-dashoffset: -1000;
+    opacity: 0;
+  }
+}
 
 body:is([data-page="about"], [data-page="team"]) .sky-day {
   opacity: 1;

@@ -1,4 +1,43 @@
 /* Footer and contact dock. */
+/* Reuse the sky layers so the fade follows its colors and transitions. */
+.bottom-fade {
+  position: fixed;
+  inset: auto 0 0;
+  height: 140px;
+  z-index: 5;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #0000001a 20%,
+    #00000080 50%,
+    #000 85%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #0000001a 20%,
+    #00000080 50%,
+    #000 85%
+  );
+}
+
+/* Sample the same viewport coordinates as the full-height sky. */
+.bottom-fade,
+.bottom-fade .sky-day,
+.bottom-fade .sky-night {
+  background-size: 100% 100dvh;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+.bottom-fade .sky-night::after {
+  display: none;
+}
+
 .site-footer {
   max-width: 1120px;
   min-height: 97px;
@@ -76,7 +115,13 @@
   white-space: nowrap;
 }
 
-.contact-dock > .dock-support:hover {
+.home-hero .dock-support {
+  font-size: 14px;
+  padding: 14px 22px;
+}
+
+.contact-dock > .dock-support:hover,
+.home-hero .dock-support:hover {
   background: #4c4b3f;
   color: #fff;
 }
