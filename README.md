@@ -18,6 +18,7 @@ In the repository's **Settings → Pages → Build and deployment**, select
 **GitHub Actions** as the source. Push to `master` or manually run **Deploy to
 GitHub Pages** from the Actions tab.
 
-The workflow builds and publishes `_site/`. Keep `schulichonachip.ca` configured
-in Pages settings and its DNS pointed at GitHub Pages to use the existing custom
-domain. Relative links also support the default repository URL.
+The workflow builds and publishes `_site/` to
+`https://schulich-on-a-chip.github.io/website/`. To use `schulichonachip.ca`,
+configure it in Pages settings and point its DNS at GitHub Pages. Relative links
+support both addresses.

@@ -10,5 +10,4 @@ await cp(new URL('../site/', import.meta.url), output, {
 for (const file of ['sock.js', 'sock.js.map', 'emulator-demo.js', 'emulator-demo.js.map']) {
     await cp(new URL(`../.pages-build/${file}`, import.meta.url), new URL(file, output));
 }
-await cp(new URL('../CNAME', import.meta.url), new URL('CNAME', output));
 await writeFile(new URL('.nojekyll', output), '');
