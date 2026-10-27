@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./.pages-build",
+    "types": [],
+    "noEmitOnError": true
+  },
+  "include": ["src/sock.ts", "src/emulator-demo.ts"]
+}

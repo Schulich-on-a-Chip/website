@@ -1,10 +1,14 @@
 {
   "type": "module",
+  "scripts": {
+    "build": "tsc --project tsconfig.pages.json && node scripts/build-pages.mjs"
+  },
   "dependencies": {
     "express": "^5.2.1"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
-    "@types/node": "^26.1.1"
+    "@types/node": "^26.1.1",
+    "typescript": "^7.0.2"
   }
 }

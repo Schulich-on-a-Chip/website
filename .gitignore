@@ -1,0 +1,4 @@
+node_modules/
+.pages-build/
+_site/
+.DS_Store
