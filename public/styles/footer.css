@@ -1,4 +1,4 @@
-/* Footer and contact dock. */
+/* Bottom fade and contact dock. */
 /* Reuse the gradient layers so the fade follows its colors and transitions. */
 .bottom-fade {
   position: fixed;
@@ -31,28 +31,6 @@
   background-size: 100% 100dvh;
   background-position: center bottom;
   background-repeat: no-repeat;
-}
-
-.site-footer {
-  max-width: 1120px;
-  min-height: 97px;
-  padding: 24px 32px 106px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 20px;
-  color: var(--footer);
-  font-size: 11px;
-}
-
-.footer-links {
-  display: flex;
-  gap: 24px;
-}
-
-.site-footer a:hover {
-  color: var(--ink);
 }
 
 .contact-dock {

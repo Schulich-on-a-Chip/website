@@ -25,11 +25,21 @@
   background-color: #ffffff12;
 }
 
-.member .portrait {
-  transition: filter 180ms ease;
+.member {
+  transition: background-color 180ms ease;
 }
 
-.member:focus-within .portrait {
+.member .portrait {
+  transition:
+    filter 180ms ease,
+    transform 180ms ease;
+}
+
+.member:focus-visible {
+  background-color: #ffffff06;
+}
+
+.member:focus-visible .portrait {
   filter: saturate(1);
 }
 
@@ -38,8 +48,12 @@
   .contact-dock > a:not(.dock-support):hover {
     background-color: #ffffff0f;
   }
+  .member:hover {
+    background-color: #ffffff06;
+  }
   .member:hover .portrait {
     filter: saturate(1);
+    transform: translateY(-2px);
   }
 }
 
@@ -72,6 +86,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .member .portrait {
+    transform: none !important;
+  }
   .button,
   .dock-support,
   .home-button,

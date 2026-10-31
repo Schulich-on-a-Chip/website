@@ -1,21 +1,20 @@
 /* Team member lists and portraits. */
 .team-section {
-  padding: 5px 0 90px;
+  padding: 5px 0 5px;
 }
 
 .team-section > h2 {
-  font-size: 12px;
+  font-size: 25px;
   font-weight: 500;
   color: var(--muted);
   margin: 0 0 24px;
-  padding-bottom: 15px;
   border-bottom: 1px solid var(--line);
 }
 
 .members {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1px 32px;
+  gap: 32px;
   margin-bottom: 48px;
 }
 
@@ -23,14 +22,16 @@
   position: relative;
   display: flex;
   gap: 15px;
-  align-items: center;
-  padding: 24px 0;
-  border-bottom: 1px solid var(--line);
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 25px 25px 25px;
+  border-radius: 20px;
 }
 
 .portrait {
-  width: 56px;
-  height: 56px;
+  width: 88px;
+  height: 88px;
+  margin-bottom: 8px;
   border-radius: 50%;
   object-fit: cover;
   background: #eeede5;
@@ -63,19 +64,6 @@
 .member-link svg {
   width: 13px;
   height: 13px;
-}
-
-.executives .member {
-  align-items: flex-start;
-  flex-direction: column;
-  padding-top: 0;
-  padding-bottom: 25px;
-}
-
-.executives .portrait {
-  height: 88px;
-  width: 88px;
-  margin-bottom: 8px;
 }
 
 /* Projects and events. */

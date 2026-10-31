@@ -27,10 +27,6 @@
     padding: 0 25px;
   }
   .members {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1px 22px;
-  }
-  .executives {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 15px;
   }
@@ -52,10 +48,6 @@
   }
   .home-hero h1 {
     max-width: 600px;
-  }
-  .site-footer {
-    padding-left: 25px;
-    padding-right: 25px;
   }
   body[data-page="support"] {
     --wafer-size: 115vw;
@@ -169,16 +161,13 @@
     grid-template-columns: 1fr;
     gap: 0;
   }
-  .executives {
-    grid-template-columns: 1fr;
-  }
-  .executives .member {
+  .member {
     flex-direction: row;
     align-items: center;
     padding: 20px 0;
     gap: 20px;
   }
-  .executives .portrait {
+  .portrait {
     height: 64px;
     width: 64px;
     margin: 0;
@@ -242,12 +231,6 @@
     --wafer-size: 175vw;
     --wafer-y: 20px;
   }
-  .site-footer {
-    font-size: 10px;
-    flex-direction: column;
-    gap: 18px;
-    padding-bottom: 110px;
-  }
   .contact-dock {
     bottom: 18px;
   }
@@ -269,30 +252,5 @@
   }
   * {
     animation: none !important;
-  }
-}
-
-/* Footer contact layout refinements. */
-.footer-contact {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.footer-links {
-  align-items: flex-start;
-}
-
-body[data-page="home"] .site-footer {
-  margin-top: -50px;
-  position: relative;
-}
-
-@media (max-width: 540px) {
-  body[data-page="home"] .site-footer {
-    margin-top: -65px;
-  }
-  .footer-links {
-    gap: 28px;
   }
 }

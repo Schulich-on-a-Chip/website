@@ -2,12 +2,30 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { format, resolveConfig } from "prettier";
 
-// Keep the shared layout here; page text and content metadata live in copy.md.
+// Keep the shared layout here; page copy and people live in separate data files.
 const copy = JSON.parse(
   readFileSync(new URL("../copy.md", import.meta.url), "utf8").match(
     /```json\s*([\s\S]*?)```/,
   )[1],
 );
+const people = JSON.parse(
+  readFileSync(new URL("../data/people.json", import.meta.url), "utf8"),
+);
+const collator = new Intl.Collator("en", { sensitivity: "base" });
+const teams = new Map();
+for (const person of [...people].sort(
+  (a, b) =>
+    Number(b.team === "Executive Team") - Number(a.team === "Executive Team") ||
+    collator.compare(a.team, b.team) ||
+    collator.compare(
+      a.name.trim().split(/\s+/)[0],
+      b.name.trim().split(/\s+/)[0],
+    ) ||
+    collator.compare(a.name, b.name),
+)) {
+  if (!teams.has(person.team)) teams.set(person.team, []);
+  teams.get(person.team).push(person);
+}
 const outputDirectory = new URL("../public/", import.meta.url);
 const htmlFormatOptions = {
   ...(await resolveConfig(
@@ -99,10 +117,16 @@ const nav = (key) => /* HTML */ `
   </nav>
 `;
 const member = (person) => /* HTML */ `
-  <article class="member">
+  <a
+    class="member"
+    href="${escapeHtml(person.linkedin)}"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="${escapeHtml(person.name)} · ${escapeHtml(copy.footer.linkedin)}"
+  >
     <img
       class="portrait"
-      src="/${escapeHtml(person.image)}"
+      src="/${escapeHtml(person.image.replace(/^\/+/, ""))}"
       alt="${escapeHtml(person.name)}"
       loading="lazy"
       width="120"
@@ -110,18 +134,10 @@ const member = (person) => /* HTML */ `
     />
     <div>
       <h3>${escapeHtml(person.name)}</h3>
-      <p>${escapeHtml(person.role)}</p>
+      <p>${escapeHtml(person.role || person.team)}</p>
     </div>
-    <a
-      class="member-link"
-      href="${escapeHtml(person.linkedin)}"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="${escapeHtml(person.name)} · ${escapeHtml(copy.footer.linkedin)}"
-    >
-      ${icon("linkedin")}
-    </a>
-  </article>
+    <span class="member-link" aria-hidden="true">${icon("linkedin")}</span>
+  </a>
 `;
 const heading = (title, sub = "") => /* HTML */ `
   <header class="page-heading">
@@ -135,7 +151,7 @@ const heading = (title, sub = "") => /* HTML */ `
     <h1>${escapeHtml(title)}</h1>
   </header>
 `;
-// Page layouts. Shared navigation, footer, and contact links are added below.
+// Page layouts. Shared navigation and contact links are added below.
 const pages = {
   home: /* HTML */ `
     <section class="home-hero">
@@ -152,16 +168,16 @@ const pages = {
   `,
   team: /* HTML */ `
     ${heading(copy.team.title)}
-    <section class="team-section">
-      <h2>${escapeHtml(copy.team.executives)}</h2>
-      <div class="members executives">
-        ${copy.team.members.slice(0, 3).map(member).join("")}
-      </div>
-      <h2>${escapeHtml(copy.team.membersTitle)}</h2>
-      <div class="members">
-        ${copy.team.members.slice(3).map(member).join("")}
-      </div>
-    </section>
+    ${[...teams]
+      .map(
+        ([team, members]) => /* HTML */ `
+          <section class="team-section">
+            <h2>${escapeHtml(team)}</h2>
+            <div class="members">${members.map(member).join("")}</div>
+          </section>
+        `,
+      )
+      .join("")}
   `,
   projects: /* HTML */ `
     ${heading(copy.projects.title)}
@@ -308,15 +324,6 @@ for (const [key, content] of Object.entries(pages)) {
         </div>
         <header class="site-header">${nav(key)}</header>
         <main id="content" tabindex="-1">${content}</main>
-        <footer class="site-footer">
-          <a class="footer-brand" href="/">${escapeHtml(copy.brand)}</a>
-          <div class="footer-links">
-            ${link("/recruitment", copy.footer.recruitment)}
-            <div class="footer-contact">
-              ${link(`mailto:${copy.footer.email}`, copy.footer.contact)}${link(`mailto:${copy.footer.email}`, copy.footer.email)}
-            </div>
-          </div>
-        </footer>
         <aside
           class="contact-dock"
           aria-label="${escapeHtml(copy.footer.contact)}"
@@ -360,4 +367,6 @@ writeFileSync(
   new URL("activity.html", outputDirectory),
   readFileSync(new URL("projects.html", outputDirectory), "utf8"),
 );
-console.log(`Generated ${Object.keys(pages).length} pages from copy.md`);
+console.log(
+  `Generated ${Object.keys(pages).length} pages from copy.md and data/people.json`,
+);

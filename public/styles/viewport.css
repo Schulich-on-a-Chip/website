@@ -1,14 +1,15 @@
-/* These two pages compose a complete viewport, including the footer and dock. */
+/* These two pages compose a complete viewport, with room for the contact dock. */
 body:is([data-page="home"], [data-page="about"]) {
   height: 100svh;
   min-height: 0;
   overflow: clip;
   display: grid;
-  grid-template-rows: 110px minmax(0, 1fr) 130px;
+  grid-template-rows: 110px minmax(0, 1fr);
 }
 
 body:is([data-page="home"], [data-page="about"]) main {
   width: 100%;
+  padding-bottom: 90px;
   min-height: 0;
   display: flex;
   flex-direction: column;
@@ -38,13 +39,6 @@ body[data-page="about"] .mission p {
   margin: 0;
   font-size: clamp(14px, 2.1svh, 20px);
   line-height: 1.65;
-}
-
-body:is([data-page="home"], [data-page="about"]) .site-footer {
-  margin: 0 auto;
-  width: 100%;
-  min-height: 0;
-  padding: 12px 32px 76px;
 }
 
 @media (max-width: 540px) {
@@ -87,11 +81,7 @@ body:is([data-page="home"], [data-page="about"]) .site-footer {
     height: 15px;
   }
   body:is([data-page="home"], [data-page="about"]) {
-    grid-template-rows: 100px minmax(0, 1fr) 130px;
-  }
-  body:is([data-page="home"], [data-page="about"]) .site-footer {
-    padding: 10px 25px 76px;
-    gap: 12px;
+    grid-template-rows: 100px minmax(0, 1fr);
   }
   body[data-page="about"] .page-heading h1 {
     font-size: 36px;
@@ -108,18 +98,10 @@ body:is([data-page="home"], [data-page="about"]) .site-footer {
 
 @media (max-height: 650px) {
   body:is([data-page="home"], [data-page="about"]) {
-    grid-template-rows: 90px minmax(0, 1fr) 110px;
+    grid-template-rows: 90px minmax(0, 1fr);
   }
   body:is([data-page="home"], [data-page="about"]) .site-header {
     height: 90px;
-  }
-  body:is([data-page="home"], [data-page="about"]) .site-footer {
-    flex-direction: row;
-    padding-top: 5px;
-    font-size: 9px;
-  }
-  body:is([data-page="home"], [data-page="about"]) .footer-brand {
-    display: none;
   }
   body[data-page="about"] .page-heading h1 {
     font-size: 30px;
