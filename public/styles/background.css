@@ -22,58 +22,58 @@
 /* Each page has its own interference colours, reflection positions, and angle. */
 .wafer-gradient[data-gradient="home"] {
   background:
-    radial-gradient(ellipse at 100% 85%, #87513a66, transparent 50%),
-    radial-gradient(ellipse at 5% 65%, #502b7b80, transparent 55%),
-    linear-gradient(145deg, #0a002c 25%, #170d3d 65%, #0a002c 100%);
+    radial-gradient(ellipse at 100% 85%, #164685, transparent 50%),
+    radial-gradient(ellipse at 5% 65%, #015bcf, transparent 55%),
+    linear-gradient(145deg, #000b3d 25%, #170d3d 65%, #000b3d 100%);
 }
 
 .wafer-gradient[data-gradient="about"] {
   background:
-    radial-gradient(ellipse at 95% 20%, #8d467173, transparent 50%),
-    radial-gradient(ellipse at 10% 90%, #4c50a880, transparent 55%),
-    linear-gradient(155deg, #0a002c 25%, #281044 65%, #0a002c 100%);
+    radial-gradient(ellipse at 95% 20%, #164685, transparent 50%),
+    radial-gradient(ellipse at 10% 90%, #015bcf, transparent 55%),
+    linear-gradient(155deg, #000b3d 25%, #281044 65%, #000b3d 100%);
 }
 
 .wafer-gradient[data-gradient="team"] {
   background:
-    radial-gradient(ellipse at 0% 15%, #6654ab80, transparent 50%),
-    radial-gradient(ellipse at 100% 80%, #a04b8466, transparent 55%),
-    linear-gradient(125deg, #0a002c 25%, #211344 65%, #0a002c 100%);
+    radial-gradient(ellipse at 0% 15%, #164685, transparent 50%),
+    radial-gradient(ellipse at 100% 80%, #015bcf, transparent 55%),
+    linear-gradient(125deg, #000b3d 25%, #211344 65%, #000b3d 100%);
 }
 
 .wafer-gradient[data-gradient="projects"] {
   background:
-    radial-gradient(ellipse at 5% 30%, #208b8973, transparent 50%),
-    radial-gradient(ellipse at 95% 85%, #554ba880, transparent 55%),
-    linear-gradient(165deg, #0a002c 25%, #0e273e 65%, #0a002c 100%);
+    radial-gradient(ellipse at 5% 30%, #164685, transparent 50%),
+    radial-gradient(ellipse at 95% 85%, #015bcf, transparent 55%),
+    linear-gradient(165deg, #000b3d 25%, #0e273e 65%, #000b3d 100%);
 }
 
 .wafer-gradient[data-gradient="events"] {
   background:
-    radial-gradient(ellipse at 100% 35%, #ad526b80, transparent 50%),
-    radial-gradient(ellipse at 0% 95%, #ab713d66, transparent 55%),
-    linear-gradient(135deg, #0a002c 25%, #321039 65%, #0a002c 100%);
+    radial-gradient(ellipse at 100% 35%, #164685, transparent 50%),
+    radial-gradient(ellipse at 0% 95%, #015bcf, transparent 55%),
+    linear-gradient(135deg, #000b3d 25%, #000b3d 65%, #000b3d 100%);
 }
 
 .wafer-gradient[data-gradient="support"] {
   background:
-    radial-gradient(ellipse at 10% 80%, #b7804873, transparent 50%),
-    radial-gradient(ellipse at 95% 10%, #72588e66, transparent 55%),
-    linear-gradient(150deg, #0a002c 25%, #2d1739 65%, #0a002c 100%);
+    radial-gradient(ellipse at 10% 80%, #164685, transparent 50%),
+    radial-gradient(ellipse at 95% 10%, #015bcf, transparent 55%),
+    linear-gradient(150deg, #000b3d 25%, #2d1739 65%, #000b3d 100%);
 }
 
 .wafer-gradient[data-gradient="recruitment"] {
   background:
-    radial-gradient(ellipse at 95% 70%, #416ca780, transparent 50%),
-    radial-gradient(ellipse at 0% 25%, #624fb380, transparent 55%),
-    linear-gradient(175deg, #0a002c 25%, #171846 65%, #0a002c 100%);
+    radial-gradient(ellipse at 95% 70%, #164685, transparent 50%),
+    radial-gradient(ellipse at 0% 25%, #015bcf, transparent 55%),
+    linear-gradient(175deg, #000b3d 25%, #171846 65%, #000b3d 100%);
 }
 
 .wafer-gradient[data-gradient="activity"] {
   background:
-    radial-gradient(ellipse at 0% 65%, #488b6f66, transparent 50%),
-    radial-gradient(ellipse at 100% 15%, #467e9c73, transparent 55%),
-    linear-gradient(115deg, #0a002c 25%, #112a37 65%, #0a002c 100%);
+    radial-gradient(ellipse at 0% 65%, #164685, transparent 50%),
+    radial-gradient(ellipse at 100% 15%, #015bcf, transparent 55%),
+    linear-gradient(115deg, #000b3d 25%, #112a37 65%, #000b3d 100%);
 }
 
 body[data-page="home"] .wafer-gradient[data-gradient="home"],
