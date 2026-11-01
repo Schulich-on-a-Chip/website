@@ -41,7 +41,9 @@
 .primary-nav {
   position: relative;
   color: var(--ink);
-  text-shadow: 0 1px 3px #00000066;
+  text-shadow:
+    0 1px 4px #000000e6,
+    0 0 6px #00000099;
   width: 100%;
   height: 48px;
   display: grid;
@@ -61,7 +63,7 @@
 .nav-side a {
   position: relative;
   font-size: 13px;
-  color: var(--copy);
+  color: var(--ink);
   white-space: nowrap;
   padding: 8px 14px;
   font-weight: 500;
@@ -70,7 +72,7 @@
 
 .nav-side a:hover,
 .nav-side a[aria-current] {
-  color: var(--ink);
+  color: var(--copy);
 }
 
 .nav-side a[aria-current]::after {
