@@ -41,7 +41,10 @@
     font-size: 22px;
   }
   .sponsors {
-    gap: 25px;
+    gap: 20px;
+  }
+  .sponsor-content {
+    padding: 24px;
   }
   .home-hero {
     padding-top: 22vh;
@@ -208,18 +211,18 @@
   }
   .sponsors {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 24px;
     margin-bottom: 65px;
   }
   .sponsor-image {
-    height: 130px;
+    height: 180px;
+    padding: 28px;
   }
   .sponsor img {
-    max-height: 100%;
     max-width: min(100%, 270px);
   }
-  .sponsor h2 {
-    margin-top: 18px;
+  .sponsor-content {
+    gap: 20px;
   }
   .support-contact {
     padding: 38px 0 60px;

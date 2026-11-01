@@ -222,7 +222,17 @@ const pages = {
                   alt="${escapeHtml(s.name)}"
                 />
               </div>
-              <h2>${escapeHtml(s.name)}</h2>
+              <div class="sponsor-content">
+                <h2>${escapeHtml(s.name)}</h2>
+                <a
+                  class="button sponsor-link"
+                  href="${escapeHtml(s.url)}"
+                  aria-label="Visit ${escapeHtml(s.name)} website"
+                >
+                  Visit website
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
             </article>
           `,
         )

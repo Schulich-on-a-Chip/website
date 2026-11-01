@@ -40,11 +40,13 @@ All displayed text is sourced from the JSON block below. Existing wording is pre
     "subtitle": "Get to know the organizations that support us",
     "sponsors": [
       {
-        "name": "Schulich School Of Engineering",
+        "name": "Schulich School of Engineering",
+        "url": "https://schulich.ucalgary.ca/",
         "image": "images/schulich-logo.png.avif"
       },
       {
         "name": "Micro Alchemy",
+        "url": "https://microalchemy.xyz/",
         "image": "images/micro-alchemy-logo.svg"
       }
     ],
