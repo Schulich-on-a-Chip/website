@@ -1,0 +1,138 @@
+/* The four page links flank the central logo and overlapping Home control. */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 7;
+  align-self: start;
+  width: 100%;
+  height: 110px;
+  max-width: 700px;
+  padding: 0 24px;
+  justify-content: center;
+}
+
+/* Clear material, a narrow curved rim, and a shadow beneath the glass. */
+.primary-nav,
+.contact-dock,
+.button,
+.dock-support,
+.home-button,
+.nav-emblem .brand {
+  background: #252035;
+  border: 1px solid var(--control-border);
+  box-shadow: var(--control-shadow);
+}
+
+@supports (
+  (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
+) {
+  .primary-nav,
+  .contact-dock,
+  .button,
+  .dock-support,
+  .home-button,
+  .nav-emblem .brand {
+    background: var(--control);
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
+    backdrop-filter: blur(10px) saturate(120%);
+  }
+}
+
+.primary-nav {
+  position: relative;
+  color: var(--ink);
+  text-shadow:
+    0 1px 4px #000000e6,
+    0 0 6px #00000099;
+  width: 100%;
+  height: 48px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 86px minmax(0, 1fr);
+  align-items: center;
+  border-radius: 999px;
+}
+
+.nav-side {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px;
+}
+
+.nav-side a {
+  position: relative;
+  font-size: 13px;
+  color: var(--ink);
+  white-space: nowrap;
+  padding: 8px 14px;
+  font-weight: 500;
+  transition: color 180ms ease;
+}
+
+.nav-side a:hover,
+.nav-side a[aria-current] {
+  color: var(--copy);
+}
+
+.nav-side a[aria-current]::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: currentColor;
+  bottom: 2px;
+  left: 50%;
+}
+
+.nav-emblem {
+  position: relative;
+  height: 44px;
+  display: grid;
+  place-items: center;
+}
+
+.nav-emblem .brand {
+  width: 76px;
+  height: 76px;
+  margin-top: -16px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--control-border);
+  border-radius: 50%;
+  background: #21183b;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  box-shadow: var(--control-shadow);
+}
+
+.nav-emblem .brand img {
+  width: 54px;
+  height: 54px;
+}
+
+.home-button {
+  position: absolute;
+  top: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 29px;
+  height: 29px;
+  border: 1px solid var(--control-border);
+  border-radius: 50%;
+  background: var(--control);
+  box-shadow: var(--control-shadow);
+  display: grid;
+  place-items: center;
+}
+
+.home-button svg {
+  width: 17px;
+  height: 17px;
+}
+
+.home-button:hover,
+.home-button[aria-current] {
+  background-color: var(--control-hover);
+}

@@ -1,0 +1,242 @@
+/* Silicon wafer interference colours over a deep violet substrate. */
+.wafer-field {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.wafer-field,
+.bottom-fade {
+  background: #0a002c;
+}
+
+.wafer-gradient {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Each page has its own interference colours, reflection positions, and angle. */
+.wafer-gradient[data-gradient="home"] {
+  background:
+    radial-gradient(ellipse at 100% 85%, #164685, transparent 50%),
+    radial-gradient(ellipse at 5% 65%, #015bcf, transparent 55%),
+    linear-gradient(145deg, #000b3d 25%, #170d3d 65%, #000b3d 100%);
+}
+
+.wafer-gradient[data-gradient="about"] {
+  background:
+    radial-gradient(ellipse at 95% 20%, #164685, transparent 50%),
+    radial-gradient(ellipse at 10% 90%, #015bcf, transparent 55%),
+    linear-gradient(155deg, #000b3d 25%, #281044 65%, #000b3d 100%);
+}
+
+.wafer-gradient[data-gradient="team"] {
+  background:
+    radial-gradient(ellipse at 0% 15%, #164685, transparent 50%),
+    radial-gradient(ellipse at 100% 80%, #015bcf, transparent 55%),
+    linear-gradient(125deg, #000b3d 25%, #211344 65%, #000b3d 100%);
+}
+
+.wafer-gradient[data-gradient="projects"] {
+  background:
+    radial-gradient(ellipse at 5% 30%, #164685, transparent 50%),
+    radial-gradient(ellipse at 95% 85%, #015bcf, transparent 55%),
+    linear-gradient(165deg, #000b3d 25%, #0e273e 65%, #000b3d 100%);
+}
+
+.wafer-gradient[data-gradient="events"] {
+  background:
+    radial-gradient(ellipse at 100% 35%, #164685, transparent 50%),
+    radial-gradient(ellipse at 0% 95%, #015bcf, transparent 55%),
+    linear-gradient(135deg, #000b3d 25%, #000b3d 65%, #000b3d 100%);
+}
+
+.wafer-gradient[data-gradient="support"] {
+  background:
+    radial-gradient(ellipse at 10% 80%, #164685, transparent 50%),
+    radial-gradient(ellipse at 95% 10%, #015bcf, transparent 55%),
+    linear-gradient(150deg, #000b3d 25%, #2d1739 65%, #000b3d 100%);
+}
+
+.wafer-gradient[data-gradient="recruitment"] {
+  background:
+    radial-gradient(ellipse at 95% 70%, #164685, transparent 50%),
+    radial-gradient(ellipse at 0% 25%, #015bcf, transparent 55%),
+    linear-gradient(175deg, #000b3d 25%, #171846 65%, #000b3d 100%);
+}
+
+.wafer-gradient[data-gradient="activity"] {
+  background:
+    radial-gradient(ellipse at 0% 65%, #164685, transparent 50%),
+    radial-gradient(ellipse at 100% 15%, #015bcf, transparent 55%),
+    linear-gradient(115deg, #000b3d 25%, #112a37 65%, #000b3d 100%);
+}
+
+body[data-page="home"] .wafer-gradient[data-gradient="home"],
+body[data-page="about"] .wafer-gradient[data-gradient="about"],
+body[data-page="team"] .wafer-gradient[data-gradient="team"],
+body[data-page="projects"] .wafer-gradient[data-gradient="projects"],
+body[data-page="events"] .wafer-gradient[data-gradient="events"],
+body[data-page="support"] .wafer-gradient[data-gradient="support"],
+body[data-page="recruitment"] .wafer-gradient[data-gradient="recruitment"],
+body[data-page="activity"] .wafer-gradient[data-gradient="activity"] {
+  opacity: 1;
+}
+
+/* Fixed edge circuits leave the central reading area clear. */
+.circuits {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  color: #aaa0db;
+  opacity: 1;
+}
+
+.circuit-panel {
+  position: absolute;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1;
+}
+
+.circuit-panel path {
+  vector-effect: non-scaling-stroke;
+}
+
+.circuit-left,
+.circuit-right {
+  top: 0;
+  width: clamp(32px, 8vw, 120px);
+  height: 100%;
+}
+
+.circuit-left {
+  left: 0;
+}
+
+.circuit-right {
+  right: 0;
+  transform: scale(-1, -1);
+}
+
+.circuit-top,
+.circuit-bottom {
+  left: 0;
+  width: 100%;
+  height: clamp(32px, 7vh, 80px);
+}
+
+.circuit-top {
+  top: 0;
+}
+
+.circuit-bottom {
+  bottom: 0;
+  transform: scale(-1, -1);
+}
+
+.circuit-trace {
+  opacity: 0.18;
+}
+
+.circuit-pulse {
+  stroke: #fff3d6;
+  stroke-width: 1.5;
+  stroke-dasharray: 38 962;
+  opacity: 0;
+}
+
+body:is([data-page="projects"], [data-page="events"]) .circuits {
+  color: #9dbfdf;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .circuit-pulse {
+    animation: circuit-flow var(--pulse-duration) var(--pulse-delay) linear
+      infinite;
+  }
+}
+
+@keyframes circuit-flow {
+  0% {
+    stroke-dashoffset: 40;
+    opacity: 0;
+  }
+  12%,
+  75% {
+    opacity: 0.65;
+  }
+  90%,
+  100% {
+    stroke-dashoffset: -1000;
+    opacity: 0;
+  }
+}
+
+.wafer {
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
+  left: 50%;
+  top: 0;
+  width: var(--wafer-size);
+  aspect-ratio: 1;
+  transform: translate(calc(-50% + var(--wafer-x)), var(--wafer-y))
+    rotate(var(--wafer-rotation));
+  background: url("/images/wafer.svg") center/contain no-repeat;
+  border-radius: 50%;
+  filter: sepia(0.25) saturate(1.5) drop-shadow(0 0 60px #ffca7c99);
+  transition:
+    transform 1.8s cubic-bezier(0.4, 0, 0.2, 1),
+    width 1.8s cubic-bezier(0.4, 0, 0.2, 1),
+    filter 1.8s ease;
+}
+
+body:not([data-page="home"]) {
+  --wafer-y: calc(-1 * var(--wafer-size) + 255px);
+  --wafer-rotation: 12deg;
+}
+
+/* Page-specific wafer palettes and wafer positioning. */
+body[data-page="about"] {
+  --wafer-rotation: 24deg;
+}
+
+body[data-page="team"] {
+  --wafer-rotation: 36deg;
+}
+
+body:is([data-page="about"], [data-page="team"]) .wafer {
+  filter: drop-shadow(0 0 55px #fff0b899);
+}
+
+body[data-page="projects"] {
+  --wafer-x: 0px;
+  --wafer-rotation: 48deg;
+}
+
+body[data-page="events"] {
+  --wafer-x: -85px;
+  --wafer-rotation: 60deg;
+}
+
+body:is([data-page="projects"], [data-page="events"]) {
+  --wafer-y: 110svh;
+}
+
+body[data-page="support"] {
+  --wafer-y: 60px;
+  --wafer-size: min(78vw, 850px);
+  --wafer-rotation: 72deg;
+}
+
+body[data-page="recruitment"] {
+  --wafer-x: 90px;
+  --wafer-rotation: 84deg;
+}

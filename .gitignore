@@ -1,4 +1,4 @@
 node_modules/
-.pages-build/
-_site/
+dist/
 .DS_Store
+*.local

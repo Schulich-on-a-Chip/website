@@ -1,0 +1,105 @@
+/* Restrained changes in tint and pressure keep the material visually stable. */
+.primary-nav,
+.contact-dock,
+.button,
+.text-button,
+.dock-support,
+.home-button,
+.nav-emblem .brand,
+.contact-dock > a {
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    scale 180ms var(--glass-ease);
+}
+
+.nav-side a {
+  border-radius: 999px;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.nav-side a:focus-visible,
+.contact-dock > a:focus-visible {
+  background-color: #ffffff12;
+}
+
+.member {
+  transition: background-color 180ms ease;
+}
+
+.member .portrait {
+  transition:
+    filter 180ms ease,
+    transform 180ms ease;
+}
+
+.member:focus-visible {
+  background-color: #ffffff06;
+}
+
+.member:focus-visible .portrait {
+  filter: saturate(1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav-side a:hover,
+  .contact-dock > a:not(.dock-support):hover {
+    background-color: #ffffff0f;
+  }
+  .member:hover {
+    background-color: #ffffff06;
+  }
+  .member:hover .portrait {
+    filter: saturate(1);
+    transform: translateY(-2px);
+  }
+}
+
+.button:active,
+.dock-support:active,
+.home-button:active,
+.nav-emblem .brand:active,
+.contact-dock > a:active {
+  scale: 0.985;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes content-arrive {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  main > * {
+    animation: content-arrive 320ms ease-out backwards;
+  }
+  main > :nth-child(2) {
+    animation-delay: 40ms;
+  }
+  main > :nth-child(n + 3) {
+    animation-delay: 80ms;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .member .portrait {
+    transform: none !important;
+  }
+  .button,
+  .dock-support,
+  .home-button,
+  .nav-emblem .brand,
+  .contact-dock > a {
+    scale: 1 !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
