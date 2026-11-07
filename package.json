@@ -4,6 +4,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "build": "node scripts/build-pages.mjs && tsc",
+    "build:pages": "npm run build && node scripts/package-pages.mjs",
     "start": "bun dist/server/index.js",
     "dev": "node scripts/build-pages.mjs && tsc && bun --watch dist/server/index.js"
   },

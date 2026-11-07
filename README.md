@@ -49,6 +49,14 @@ Styles live in `public/styles/`: `base.css` defines colors and Exo typography,
 in `public/styles.css` when editing overrides. The shared page template loads Exo
 from Google Fonts.
 
+## Deployment
+
+Every push to `master` builds and deploys the site to GitHub Pages through
+`.github/workflows/pages.yml`. The workflow can also be run manually.
+Run `npm run build:pages` to verify the deployment build locally; `_site/`
+contains the public assets, compiled browser scripts, and directory indexes
+for extensionless page URLs. GitHub Pages serves the site at schulichonachip.ca.
+
 ## Formatting
 
 Prettier uses two spaces and an 80 character target width. The `/* HTML */`
