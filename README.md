@@ -62,5 +62,5 @@ formatting.
 Team members are loaded from `data/people.json` during the build. Each entry has
 `name`, `linkedin`, `image` (a path relative to `public/`), and `team`. An optional
 `role` preserves individual titles; otherwise the card displays the team name.
-Executive Team is displayed first, followed by the other teams alphabetically.
+Executive Team is displayed first, then Leads, followed by the other teams alphabetically.
 Members are sorted alphabetically by first name within each team. Add or edit entries and rebuild to update the team page.

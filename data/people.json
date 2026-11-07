@@ -1,37 +1,135 @@
 [
   {
+    "name": "Eshaan Madaan",
+    "role": "Business Team",
+    "image": "images/profiles/eshaanm.jpeg",
+    "linkedin": "https://www.linkedin.com/in/eshaan-madaan-b36104389/",
+    "team": "Business Team"
+  },
+  {
+    "name": "Ava Zhao",
+    "role": "Business Team",
+    "image": "images/profiles/avaz.png",
+    "linkedin": "https://www.linkedin.com/in/ava-zhao-28766a389/",
+    "team": "Business Team"
+  },
+  {
+    "name": "Isaac An",
+    "role": "Business Team",
+    "image": "images/profiles/isaaca.jpg",
+    "linkedin": "https://www.linkedin.com/in/isaac-an-5a3717304/",
+    "team": "Business Team"
+  },
+  {
+    "name": "Chloe Lee",
+    "role": "Business Team",
+    "image": "images/profiles/chloel.jpg",
+    "linkedin": "https://www.linkedin.com/in/c-lee-3a2bb742a/",
+    "team": "Business Team"
+  },
+  {
+    "name": "Gurleen Bahia",
+    "role": "Business Team",
+    "image": "images/profiles/gurleenb.png",
+    "linkedin": "https://www.linkedin.com/in/gurleenbahia/",
+    "team": "Business Team"
+  },
+  {
     "name": "Nicholas West",
-    "role": "Co-Founder, Tech. Lead, Co-Pres.",
+    "role": "Co-President",
     "image": "images/profiles/nickw.png",
     "linkedin": "https://www.linkedin.com/in/nicholas-west-519163381/",
     "team": "Executive Team"
   },
   {
     "name": "Gurtejbir Randhawa",
-    "role": "Co-Founder, Business Lead, Co-Pres.",
-    "image": "images/profiles/gurtejr.png",
+    "role": "Co-President",
+    "image": "images/profiles/gurtejr.jpg",
     "linkedin": "https://www.linkedin.com/in/gurtejbir-randhawa/",
     "team": "Executive Team"
   },
   {
-    "name": "Eshaan Madaan",
-    "role": "Co-Founder, Business Team",
-    "image": "images/profile-pic.png",
-    "linkedin": "https://www.linkedin.com/in/eshaan-madaan-b36104389/",
-    "team": "Executive Team"
+    "name": "Sahana Santhanam",
+    "role": "Memory Subsystem Lead",
+    "image": "images/profiles/sahanas.jpeg",
+    "linkedin": "https://www.linkedin.com/in/sahana-santhanam-27b97b271/",
+    "team": "Leads"
   },
   {
     "name": "Noah Azzaria-Byrne",
-    "role": "Jr. Tech. Lead",
-    "image": "images/profile-pic.png",
+    "role": "GPU Lead",
+    "image": "images/profiles/noaha.jpeg",
     "linkedin": "https://www.linkedin.com/in/noah-azzaria-byrne-068835402/",
-    "team": "Technical Team"
+    "team": "Leads"
+  },
+  {
+    "name": "Joseph Bichel",
+    "role": "Technical Advisor",
+    "image": "images/profiles/josephb.jpeg",
+    "linkedin": "https://www.linkedin.com/in/joseph-bichel/",
+    "team": "Leads"
+  },
+  {
+    "name": "Won Lee",
+    "role": "Physical Design Lead",
+    "image": "images/profiles/wonl.jpeg",
+    "linkedin": "https://www.linkedin.com/in/won-lee-27b431382/",
+    "team": "Leads"
+  },
+  {
+    "name": "Adetayo Adebowale",
+    "role": "FPGA/ Verification Lead",
+    "image": "images/profiles/adetayoa.jpeg",
+    "linkedin": "https://www.linkedin.com/in/adetayo-adebowale-569974200/",
+    "team": "Leads"
   },
   {
     "name": "Harvey Wong",
-    "role": "Technical Team",
-    "image": "images/profile-pic.png",
+    "role": "Audio Processing Lead",
+    "image": "images/profiles/harveyw.jpeg",
     "linkedin": "https://www.linkedin.com/in/harvey-wong-737034397/",
+    "team": "Leads"
+  },
+  {
+    "name": "Bilal Melethil",
+    "role": "Technical Team",
+    "image": "images/profiles/bilalm.jpeg",
+    "linkedin": "https://www.linkedin.com/in/bilalmelethil/",
+    "team": "Technical Team"
+  },
+  {
+    "name": "Sudipta Bairagi",
+    "role": "Technical Team",
+    "image": "images/profiles/sudiptab.jpeg",
+    "linkedin": "https://www.linkedin.com/in/sudiptabairagi/",
+    "team": "Technical Team"
+  },
+  {
+    "name": "Udit Sharma",
+    "role": "Technical Team",
+    "image": "images/profiles/udits.jpg",
+    "linkedin": "https://www.linkedin.com/in/udit-sharma-9597a0423/",
+    "team": "Technical Team"
+  },
+  {
+    "name": "Khadija Saeed",
+    "role": "Technical Team",
+    "image": "images/profiles/khadijas.jpeg",
+    "linkedin": "https://ca.linkedin.com/in/ksaeed4531/",
+    "team": "Technical Team"
+  },
+  {
+    "name": "Ron Macarilay",
+    "role": "Technical Team",
+    "image": "images/profiles/ronm.jpeg",
+    "linkedin": "https://www.linkedin.com/in/ron-macarilay-7a4b9738b/",
+    "team": "Technical Team"
+  },
+  {
+    "name": "An Huynh",
+    "role": "Technical Team",
+    "image": "images/profiles/anh.jpg",
+    "linkedin": "https://www.linkedin.com/in/a-h-126b7a2a1/",
     "team": "Technical Team"
   },
   {
@@ -42,52 +140,17 @@
     "team": "Technical Team"
   },
   {
-    "name": "Sahana Santhanam",
+    "name": "Iman Rehman",
     "role": "Technical Team",
-    "image": "images/profiles/sahanas.jpeg",
-    "linkedin": "https://www.linkedin.com/in/sahana-santhanam-27b97b271/",
+    "image": "images/profiles/imanr.png",
+    "linkedin": "https://www.linkedin.com/in/iman-rehman/",
     "team": "Technical Team"
   },
   {
-    "name": "Ron Macarilay",
+    "name": "Sam Katevatis",
     "role": "Technical Team",
-    "image": "images/profile-pic.png",
-    "linkedin": "https://www.linkedin.com/in/ron-macarilay-7a4b9738b/",
+    "image": "images/profiles/samk.jpeg",
+    "linkedin": "https://www.linkedin.com/in/sam-katevatis-56a52139a/",
     "team": "Technical Team"
-  },
-  {
-    "name": "Won Lee",
-    "role": "Technical Team",
-    "image": "images/profile-pic.png",
-    "linkedin": "https://www.linkedin.com/in/won-lee-27b431382/",
-    "team": "Technical Team"
-  },
-  {
-    "name": "Rowan Talpt",
-    "role": "Technical Team",
-    "image": "images/profiles/rowant.jpeg",
-    "linkedin": "https://www.linkedin.com/in/rowan-talpt-ab9672283/",
-    "team": "Technical Team"
-  },
-  {
-    "name": "Daniel Botrie",
-    "role": "Technical Team",
-    "image": "images/profile-pic.png",
-    "linkedin": "https://www.linkedin.com/in/daniel-botrie-645601386/",
-    "team": "Technical Team"
-  },
-  {
-    "name": "Bilal Melethil",
-    "role": "Technical Team",
-    "image": "images/profile-pic.png",
-    "linkedin": "https://www.linkedin.com/in/bilalmelethil/",
-    "team": "Technical Team"
-  },
-  {
-    "name": "Isaac An",
-    "role": "",
-    "image": "images/profiles/isaaca.png",
-    "linkedin": "https://www.linkedin.com/in/isaac-an-5a3717304/",
-    "team": "Business Team"
   }
 ]

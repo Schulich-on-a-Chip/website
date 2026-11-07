@@ -13,9 +13,13 @@ const people = JSON.parse(
 );
 const collator = new Intl.Collator("en", { sensitivity: "base" });
 const teams = new Map();
+const teamOrder = new Map([
+  ["Executive Team", 0],
+  ["Leads", 1],
+]);
 for (const person of [...people].sort(
   (a, b) =>
-    Number(b.team === "Executive Team") - Number(a.team === "Executive Team") ||
+    (teamOrder.get(a.team) ?? 2) - (teamOrder.get(b.team) ?? 2) ||
     collator.compare(a.team, b.team) ||
     collator.compare(
       a.name.trim().split(/\s+/)[0],
