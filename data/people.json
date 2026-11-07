@@ -152,5 +152,12 @@
     "image": "images/profiles/samk.jpeg",
     "linkedin": "https://www.linkedin.com/in/sam-katevatis-56a52139a/",
     "team": "Technical Team"
+  },
+  {
+    "name": "Neer Soni",
+    "role": "Technical Team",
+    "image": "images/profiles/neers.jpeg",
+    "linkedin": "https://www.linkedin.com/in/neer-soni03",
+    "team": "Technical Team"
   }
 ]
